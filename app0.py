@@ -21,8 +21,8 @@ st.write("This app connects to a PostgreSQL database and fetches some data.")
 # Run query on button click
 if st.button("Run Query"):
     # Read secrets
-    DBU = os.getenv["DBU"]
-    DBP = os.getenv["DBP"]
+    DBU = os.getenv("DBU")
+    DBP = os.getenv("DBP")
 
     # Construct DB URL
     db_url = f"postgresql://{DBU}:{DBP}"
