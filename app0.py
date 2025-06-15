@@ -1,6 +1,8 @@
+import os
 import streamlit as st
 import pandas as pd
 from sqlalchemy import create_engine
+
 
 # Function to run query and return DataFrame
 def query_to_dataframe(query, db_url):
@@ -19,8 +21,8 @@ st.write("This app connects to a PostgreSQL database and fetches some data.")
 # Run query on button click
 if st.button("Run Query"):
     # Read secrets
-    DBU = st.secrets["DBU"]
-    DBP = st.secrets["DBP"]
+    DBU = os.getenv["DBU"]
+    DBP = os.getenv["DBP"]
 
     # Construct DB URL
     db_url = f"postgresql://{DBU}:{DBP}"
